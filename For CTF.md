@@ -41,3 +41,12 @@ openssl des3 -d -salt -in file.des3 -out file.txt -k supersecretpassword123
 2. samdump2 SYSTEM SAM
 
 3. then decrypt the hash and get raw passwords
+
+## Fix .gif file header using python
+
+'''
+bandor = open('pro.gif', 'rb').read()
+bandor = b"\x47\x49\x46\x38" + bandor
+with open('pro_fixed.gif', 'wb') as fak:
+    fak.write(bandor)
+'''
