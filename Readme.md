@@ -51,15 +51,29 @@ with open('pro_fixed.gif', 'wb') as fak:
     fak.write(bandor)
 ```
 
-## Get binary output from whitespace
+## Get Ascii Text output from whitespace
 ```
-f = open("the_file_with_whitespce.txt", "r").read()
+file_name = input("Enter Your File Name: ")
+
+f = open(file_name, "r").read()
 pro = ""
 for bn in f:
 	if ord(bn) == 32:
 		pro += "0"
 	else:
 		pro += "1"
-print(pro)
+
+input_string=int(pro, 2);
+ 
+
+Total_bytes= (input_string.bit_length() +7) // 8
+ 
+
+input_array = input_string.to_bytes(Total_bytes, "big")
+ 
+ASCII_value=input_array.decode()
+print()
+print()
+print(ASCII_value)
 
 ```
