@@ -50,3 +50,16 @@ bandor = b"\x47\x49\x46\x38" + bandor
 with open('pro_fixed.gif', 'wb') as fak:
     fak.write(bandor)
 ```
+
+## Get binary output from whitespace
+```
+f = open("the_file_with_whitespce.txt", "r").read()
+pro = ""
+for bn in f:
+	if ord(bn) == 32:
+		pro += "0"
+	else:
+		pro += "1"
+print(pro)
+
+```
