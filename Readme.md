@@ -77,3 +77,7 @@ print()
 print(ASCII_value)
 
 ```
+
+## Extract audio from video using ffmpeg
+
+1. ffmpeg -i sample.mp4 -q:a 0 -map a sample.mp3
