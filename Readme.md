@@ -36,11 +36,11 @@ openssl des3 -d -salt -in file.des3 -out file.txt -k supersecretpassword123
 
 ## Get all hashed password from windows registry hives
 
-1. get SAM,SYSTEM hive from the DISK
+### get SAM,SYSTEM hive from the DISK
 
-2. samdump2 SYSTEM SAM
+1. samdump2 SYSTEM SAM
 
-3. then decrypt the hash and get raw passwords
+### Then decrypt the hash and get raw passwords
 
 ## Fix .gif file header using python
 
@@ -81,3 +81,21 @@ print(ASCII_value)
 ## Extract audio from video using ffmpeg
 
 1. ffmpeg -i sample.mp4 -q:a 0 -map a sample.mp3
+
+## See all the comments of a GIF.
+1. exiftool -a pro.gif | grep Comment.
+
+or , using python
+
+```
+# Written by QaisQupti#5326
+import imageio
+def parse_comment_extension(gif_path):
+    with imageio.get_reader(gif_path) as gif:
+        for frame in gif:
+            if "comment" in frame.meta:
+                comment = frame.meta["comment"].decode("utf-8")
+                print(comment)
+
+parse_comment_extension("pro.gif")
+```
