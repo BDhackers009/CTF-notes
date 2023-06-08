@@ -99,3 +99,9 @@ def parse_comment_extension(gif_path):
 
 parse_comment_extension("pro.gif")
 ```
+
+## find hidden data from a PNG
+
+```
+zsteg -a legend.png
+```
